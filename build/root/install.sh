@@ -29,7 +29,7 @@ fi
 source upd.sh
 
 # define pacman packages
-pacman_packages="deluge"
+pacman_packages="deluge libnatpmp"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
