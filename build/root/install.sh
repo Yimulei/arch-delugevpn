@@ -43,7 +43,7 @@ refresh.sh
 source upd.sh
 
 # define pacman packages
-pacman_packages="deluge"
+pacman_packages="deluge libnatpmp"
 
 # install compiled packages using pacman
 if [[ -n "${pacman_packages}" ]]; then
