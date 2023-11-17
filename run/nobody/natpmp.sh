@@ -12,8 +12,8 @@ findconfiguredport()
 #Function which uses natpmp to determine the activsce port
 findactiveport()
 {
-        natpmpc -g 10.2.0.1 -a 0 0 udp > /dev/null
-        natpmpc -g 10.2.0.1 -a 0 0 tcp | sed -n 's/.*Mapped public port \([0-9]\+\) .*/\1/p' | xargs;
+        natpmpc -g 10.2.0.1 -a 1 0 udp > /dev/null
+        natpmpc -g 10.2.0.1 -a 1 0 tcp | sed -n 's/.*Mapped public port \([0-9]\+\) .*/\1/p' | xargs;
 }
 
 while true
