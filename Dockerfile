@@ -34,7 +34,23 @@ ADD config/nobody/ /home/nobody/
 
 # make executable and run bash scripts to install app
 RUN chmod +x /root/*.sh /home/nobody/*.sh /home/nobody/*.py && \
-	/bin/bash /root/install.sh "${APPNAME}" "${RELEASETAG}" "${TARGETARCH}"
+	/bin/bash /root/install.sh "latest" "amd64"
+
+# docker settings
+#################
+
+# expose port for deluge webui
+EXPOSE 8112
+
+# expose port for privoxy
+EXPOSE 8118
+
+# expose port for deluge daemon (used in conjunction with LAN_NETWORK env var)
+EXPOSE 58846
+
+# expose port for deluge incoming port (used only if VPN_ENABLED=no)
+EXPOSE 58946
+EXPOSE 58946/udp
 
 # set permissions
 #################

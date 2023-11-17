@@ -2,8 +2,8 @@ name: workflow-docker-release
 
 on:
   push:
-    branches:
-    - master
+    tags:
+      - '*'
 
 jobs:
   push_to_registry:
