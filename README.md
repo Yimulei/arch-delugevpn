@@ -202,6 +202,16 @@ there.
 
 ## Notes
 
+### NAT-PMP port monitoring
+
+The container includes a background NAT-PMP monitor that keeps Deluge's configured
+listen ports in sync with the active mapped port from the VPN gateway. It checks
+for the current public port, compares it with the value stored in
+`/config/core.conf`, and if the port has changed it updates Deluge through
+`deluge-console` and verifies the new setting. This is useful when the VPN
+provider or gateway changes the assigned port during reconnects or port-forward
+updates.
+
 Due to Google and OpenDNS supporting EDNS Client Subnet it is recommended NOT to
 use either of these NS providers.
 The list of default NS providers in the above example(s) is as follows:-
